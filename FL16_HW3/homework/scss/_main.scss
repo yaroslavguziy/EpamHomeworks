@@ -1,0 +1,242 @@
+// Write your styles here
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@mixin links-color($color: #fff) {
+  color: $color;
+  font-family: 'Hind', sans-serif;
+}
+
+@mixin buttons($paddings: 7px 40px, $color: #fff, $bgColor: $bgcButtons) {
+  color: $color;
+  background-color: $bgColor;
+  padding: $paddings;
+  font-family: 'Hind', sans-serif;
+  border: 0;
+  outline: 0;
+}
+
+%flex {
+  display: flex;
+  align-items: center;
+}
+%font {
+  font-family: 'Hind', sans-serif;
+}
+
+body {
+  background-color: $contentBackground;
+  max-width: 1620px;
+  margin: 0 auto;
+  color: $mainColor;
+  font-family: $mainFont;
+}
+
+.header {
+  margin-top: 100px;
+  &-wrap {
+    background: $bgImage no-repeat center;
+    height: 600px;
+    padding: 0 0 0 125px;
+    border-bottom-right-radius: 340px;
+  }
+  &_heading {
+    position: relative;
+    @extend %font;
+    max-width: 600px;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 1.1;
+    z-index: 5;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      display: block;
+      top: 73px;
+      left: 0;
+      background-color: $markWord;
+      width: 233px;
+      height: 38px;
+    }
+  }
+
+  &_text {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  &_text + div {
+    @extend %flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    max-width: 400px;
+
+    .login {
+      @include links-color();
+    }
+  }
+  &_button {
+    @include buttons();
+  }
+}
+
+.landing-logo {
+  @extend %flex;
+  padding-top: 15px;
+
+  p {
+    margin: 0 0 0 15px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.5;
+    span {
+      display: block;
+      text-align: center;
+      font-weight: normal;
+      font-size: 10px;
+    }
+  }
+}
+
+.section {
+  font-family: $mainFont;
+  position: relative;
+
+  &_text {
+    @extend %font;
+    text-align: center;
+    margin: 0;
+    font-weight: 700;
+    font-size: 30px;
+    padding: 30px 0;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      display: block;
+      background-color: $markWord;
+      top: 15px;
+      right: 613px;
+      width: 140px;
+      height: 50px;
+    }
+  }
+  &_card_wrap {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  &_card {
+    margin-bottom: 15px;
+    @extend %flex;
+    background-color: $cardBackground;
+    padding: 15px;
+
+    &_img {
+      width: 40%;
+      display: block;
+      border-radius: 5px;
+    }
+    &_right_container {
+      width: 60%;
+      text-align: center;
+    }
+    &_heading {
+      @extend %font;
+      color: $cardColor;
+      margin: 0;
+    }
+    &_text {
+      font-size: 12px;
+      color: rgba($cardColor, 0.6);
+    }
+    &_text {
+      text-align: justify;
+      max-width: 370px;
+      margin: 30px auto;
+      line-height: 1.5;
+    }
+  }
+  &_link {
+    font-size: 12px;
+    color: rgba($cardColor, 0.6);
+  }
+}
+.section_card:nth-child(2) {
+  .section_card_img {
+    width: 38%;
+  }
+}
+
+.section_card:last-child {
+  .section_card_img {
+    width: 45%;
+  }
+}
+
+.section_banner {
+  position: absolute;
+  @extend %flex;
+  justify-content: space-between;
+  bottom: -250px;
+  left: 330px;
+  width: 860px;
+  padding: 30px 100px;
+  background: $sectionGradient;
+  border-radius: 5px;
+  z-index: -2;
+
+  &_heading {
+    @extend %font;
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      display: block;
+      background-color: $markWord;
+      top: 17px;
+      right: 636px;
+      width: 41px;
+      height: 40px;
+    }
+  }
+  &_text {
+    font-size: 12px;
+    color: rgba($cardColor, 0.6);
+    margin: 0;
+  }
+  &_button {
+    @include buttons();
+  }
+}
+
+.footer {
+  position: relative;
+  background-color: $cardBackground;
+  margin-top: 200px;
+  padding: 100px 125px 50px;
+  z-index: -3;
+  &-wrap {
+    margin: 0 auto;
+    @extend %flex;
+    justify-content: space-between;
+    color: rgba($cardColor, 0.6);
+  }
+  &_text {
+    margin: 0;
+    width: 285px;
+    line-height: 1.5;
+  }
+  &-cr,
+  &_text {
+    font-size: 13px;
+  }
+}
