@@ -1,0 +1,279 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  background-color: #fff;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  max-width: 1460px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-top: 50px;
+  color: #fff;
+}
+.header-wrapper {
+  margin: 0 auto;
+  padding: 50px 50px;
+  background: url('../img/apples.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 700px;
+  margin: 0 auto;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  letter-spacing: 3px;
+}
+.header-logo,
+.nav-link {
+  color: #fff;
+}
+.nav-list {
+  display: flex;
+}
+.nav-link {
+  padding: 10px 20px;
+}
+.header-info {
+  margin-top: 250px;
+  text-align: center;
+}
+.header-title {
+  font-size: 40px;
+  font-weight: normal;
+  letter-spacing: 5px;
+}
+.header-title > span {
+  font-size: 80px;
+}
+
+.button {
+  display: block;
+  margin: 100px auto 0;
+  border: 2px solid #fff;
+  outline: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 70px;
+}
+
+.text-wrapper {
+  padding: 100px 50px;
+  display: flex;
+}
+
+.text-right {
+  flex: 1;
+  font-size: 13px;
+  padding-left: 200px;
+}
+.text-left {
+  max-width: 370px;
+  font-size: 18px;
+}
+.text-left > span {
+  font-weight: 600;
+}
+
+.articles {
+  background-color: #e8e8e8;
+}
+.articles-wrapper {
+  padding: 100px 50px 50px;
+}
+.articles-title {
+  font-weight: normal;
+  text-align: center;
+}
+.articles-items {
+  padding-top: 100px;
+}
+.article-item {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+}
+.item-left {
+  position: relative;
+  width: 70%;
+}
+
+.item-img {
+  width: 100%;
+  display: block;
+}
+.item-left::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #343638;
+  opacity: 0.3;
+}
+.item-date {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  color: #fff;
+  font-size: 13px;
+}
+.item-likes {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  margin: 0;
+  padding: 5px 10px;
+}
+.item-right {
+  text-align: center;
+  padding-left: 15px;
+  width: 30%;
+}
+
+.article-item:first-child {
+  padding-top: 0;
+}
+
+.article-item:nth-child(2n) > .item-left {
+  order: 2;
+}
+
+.article-item:nth-child(2n) > .item-right {
+  padding: 0 20px 0 0;
+}
+
+.form {
+  margin-top: 50px;
+  padding: 50px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.form-label {
+  font-size: 20px;
+}
+.form-input {
+  flex: 1;
+  margin-left: 15px;
+  padding: 15px;
+  border: 1px solid #343638;
+  background-color: #e8e8e8;
+}
+.form-input::placeholder {
+  color: #000;
+  font-size: 12px;
+}
+.form-button {
+  border: none;
+  outline: 0;
+  padding: 16px;
+  background-color: #343638;
+  color: #fff;
+  cursor: pointer;
+}
+
+.info-wrapper {
+  padding: 100px 50px;
+}
+.info-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-title {
+  font-size: 14px;
+}
+.info-text {
+  margin-top: 25px;
+  max-width: 350px;
+  color: #a4a4a4;
+  font-size: 12px;
+}
+
+.info-item {
+  padding-left: 15px;
+}
+
+.info-item:first-child {
+  padding-left: 0px;
+}
+
+.info-item:nth-child(3) > .info-text {
+  max-width: 200px;
+}
+
+.info-item:last-child {
+  padding-left: 80px;
+}
+
+.info-date {
+  color: #e8e8e8;
+  font-size: 12px;
+}
+.form-small {
+  padding: 0;
+  margin: 0;
+}
+.input-small {
+  margin-left: 0;
+  padding: 7px;
+}
+.button-small {
+  padding: 8px;
+}
+
+.footer {
+  padding: 0 50px;
+}
+.footer-wrapper {
+  border-top: 2px solid #e8e8e8;
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-copyright {
+  color: #a4a4a4;
+  font-size: 12px;
+}
+
+.nav-link.footer-link {
+  color: #000;
+  font-size: 12px;
+  padding: 5px 10px;
+}
