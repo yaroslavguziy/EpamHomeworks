@@ -93,12 +93,17 @@ body {
 .text-wrapper {
   padding: 100px 50px;
   display: flex;
+  justify-content: space-between;
+}
+
+.text-item {
+  width: 48%;
 }
 
 .text-right {
-  flex: 1;
   font-size: 13px;
-  padding-left: 200px;
+  max-width: 700px;
+  color: #343638;
 }
 .text-left {
   max-width: 370px;
