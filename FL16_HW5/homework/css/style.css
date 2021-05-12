@@ -248,7 +248,7 @@ button {
   transform: scale(1, 1.2);
   color: var(--blue);
   justify-content: center;
-  padding: 70px 10px;
+  padding: 80px 10px;
 }
 .prices-name,
 .prices-price {
@@ -267,8 +267,14 @@ button {
 .prices-info {
   font-size: 12px;
 }
+.item-active > .prices-info {
+  padding: 6px 0;
+}
+.item-active > .prices-treatments {
+  padding: 6px 0;
+}
 
-.price-button {
+.prices-button {
   color: var(--blue);
   background-color: var(--light);
   border: 1px solid var(--blue);
@@ -276,6 +282,9 @@ button {
   border-radius: 7px;
   font-weight: 700;
   cursor: pointer;
+}
+.item-active > .prices-button {
+  padding: 4px 15px;
 }
 
 .contact-wrapper {
@@ -439,7 +448,7 @@ button {
 
 @media (max-width: 425px) {
   .nav-link {
-    font-size: 11px;
+    font-size: 12px;
     padding: 0 3px;
   }
 }
