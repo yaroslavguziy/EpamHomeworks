@@ -1,0 +1,32 @@
+/*Your code goes here*/
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #111 !important;
+}
+
+.light-bg {
+  background-color: rgb(248, 249, 250);
+}
+
+.footer {
+  background-color: #525252;
+}
+
+.btn {
+  background-color: coral;
+  color: #fff;
+}
+.dark-bg {
+  color: #fff;
+  background-color: #525252;
+}
+.logo {
+  color: #111;
+  font-size: 1.7rem;
+}
+.nav-link {
+  color: #525252;
+}
+.nav-link.active {
+  color: #111;
+}

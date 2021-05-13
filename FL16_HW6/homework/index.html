@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>CSS Methodologies</title>
+  </head>
+  <body>
+    <header class="header py-5">
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-6 col-lg-2">
+            <a class="logo font-weight-bold" href="#">Games</a>
+          </div>
+          <div class="col-8 d-none d-xl-block">
+            <ul class="nav justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-2 d-none d-xl-block text-right">
+            <button type="button" class="btn dark-bg">Push to start</button>
+          </div>
+          <div class="col-6 d-xl-none justify-content-end navbar navbar-light">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarToggleExternalContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 justify-content-start align-items-center">
+          <div class="col">
+            <h1 class="display-5 pt-4 font-weight-normal">
+              Front-end Lab <span class="d-block display-5">CSS-Methodologies</span>
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </p>
+            <button type="button" class="btn br">Secondary</button>
+          </div>
+          <div class="col order-first">
+            <img class="img-fluid" src="./assets/hero-5.jpg" alt="hero-5" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="games dark-bg py-5">
+        <div class="container">
+          <div class="col-12 text-center">
+            <h2 class="display-5 pt-4 font-weight-normal">Games section</h2>
+            <p class="py-2">
+              Lorem ipsum dolor sit Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+              dolor.
+            </p>
+          </div>
+          <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1">
+            <div class="col text-center py-4">
+              <img class="img-fluid" src="./assets/card/1.jpg" alt="hero-5" />
+              <h5 class="display-5 pt-4">Card title</h5>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              </p>
+            </div>
+            <div class="col text-center py-4">
+              <img class="img-fluid" src="./assets/card/2.jpg" alt="hero-5" />
+              <h5 class="display-5 pt-4">Card title</h5>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              </p>
+            </div>
+            <div class="col text-center py-4">
+              <img class="img-fluid" src="./assets/card/3.jpg" alt="hero-5" />
+              <h5 class="display-5 pt-4 pt-4">Card title</h5>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              </p>
+            </div>
+            <div class="col text-center py-4">
+              <img class="img-fluid" src="./assets/card/4.jpg" alt="hero-5" />
+              <h5 class="display-5 pt-4">Card title</h5>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              </p>
+            </div>
+            <div class="col text-center py-4">
+              <img class="img-fluid" src="./assets/card/5.jpg" alt="hero-5" />
+              <h5 class="display-5 pt-4">Card title</h5>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              </p>
+            </div>
+            <div class="col text-center py-4">
+              <img class="img-fluid" src="./assets/card/6.jpg" alt="hero-5" />
+              <h5 class="display-5 pt-4">Card title</h5>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="games light-bg py-5">
+        <div class="container">
+          <div class="col-12 text-center">
+            <h2 class="display-5 pt-4 font-weight-normal">Games section</h2>
+            <p class="py-2">
+              Lorem ipsum dolor sit Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+              dolor.
+            </p>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2">
+            <div class="col text-center py-4">
+              <img class="img-fluid" src="./assets/card/7.jpg" alt="hero-5" />
+              <h5 class="display-5 pt-4">Card title</h5>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              </p>
+            </div>
+            <div class="col text-center py-4">
+              <img class="img-fluid" src="./assets/card/8.jpg" alt="hero-5" />
+              <h5 class="display-5 pt-4">Card title</h5>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              </p>
+            </div>
+            <div class="col text-center py-4">
+              <img class="img-fluid" src="./assets/card/9.jpg" alt="hero-5" />
+              <h5 class="display-5 pt-4">Card title</h5>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              </p>
+            </div>
+            <div class="col text-center py-4">
+              <img class="img-fluid" src="./assets/card/10.jpg" alt="hero-5" />
+              <h5 class="display-5 pt-4">Card title</h5>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              </p>
+            </div>
+            <div class="col text-center py-4">
+              <img class="img-fluid" src="./assets/card/11.jpg" alt="hero-5" />
+              <h5 class="display-5 pt-4">Card title</h5>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              </p>
+            </div>
+            <div class="col text-center py-4">
+              <img class="img-fluid" src="./assets/card/12.jpg" alt="hero-5" />
+              <h5 class="display-5 pt-4">Card title</h5>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer dark-bg py-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-lg-2">
+          <div class="col">
+            <h5 class="footer__title">Subscribe</h5>
+            <p class="footer__text">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+            </p>
+          </div>
+          <div class="col">
+            <form>
+              <div class="form-group">
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email Address" />
+                <button type="submit" class="btn btn-block mt-2">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-12 text-center pt-4">©2021 Front-end Lab</div>
+      </div>
+    </footer>
+  </body>
+</html>
