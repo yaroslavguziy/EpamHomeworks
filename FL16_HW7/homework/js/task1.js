@@ -19,13 +19,13 @@ let getValue = (amount, years, percent, profit = 0, prevProfit = 0, totalAmount 
     percent = +prompt(' percentage of a year', '');
   }
 
-  profit = (amount * percent) / 100;
+  profit = amount * percent / 100;
   totalAmount = amount + profit;
 
   for (let i = 0; i < years - 1; i++) {
     prevProfit = profit;
 
-    profit = prevProfit + (totalAmount * percent) / 100;
+    profit = prevProfit + totalAmount * percent / 100;
     totalAmount = amount + profit;
   }
 

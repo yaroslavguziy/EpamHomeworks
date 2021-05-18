@@ -18,7 +18,7 @@ Possible prize on current attempt: ${prizes[i]}$`,
         ''
       );
 
-      if (random == +number) {
+      if (random === +number) {
         currentPrize = prizes[i];
         totalPrize = totalPrize + currentPrize;
         i = 3;
@@ -39,10 +39,10 @@ Possible prize on current attempt: ${prizes[i]}$`,
             step = 0;
           }
         }
-      } else if (number == null) {
+      } else if (number === null) {
         i = 3;
         step = 0;
-      } else if (i == 2) {
+      } else if (i === 2) {
         alert(`Thank you for your participation. Your prize  is: ${totalPrize}$`);
         if (confirm('Do you want to play again?')) {
           step = 1;
