@@ -6,6 +6,10 @@ if (confirm('Do you want to play a game?')) {
   let attempt = 3;
   let currentPrize = 0;
 
+  let firstStep = (step, lastNumber, prizes, totalPrize) => {
+    return step, lastNumber, prizes, totalPrize;
+  };
+
   do {
     let random = Math.floor(Math.random() * (lastNumber + 1));
 
@@ -31,10 +35,7 @@ Possible prize on current attempt: ${prizes[i]}$`,
         } else {
           alert(`Thank you for your participation. Your prize is: ${totalPrize}$`);
           if (confirm('Do you want to play again?')) {
-            step = 1;
-            totalPrize = 0;
-            lastNumber = 8;
-            prizes = [100, 50, 25];
+            firstStep();
           } else {
             step = 0;
           }
@@ -45,10 +46,7 @@ Possible prize on current attempt: ${prizes[i]}$`,
       } else if (i === 2) {
         alert(`Thank you for your participation. Your prize  is: ${totalPrize}$`);
         if (confirm('Do you want to play again?')) {
-          step = 1;
-          totalPrize = 0;
-          lastNumber = 8;
-          prizes = [100, 50, 25];
+          firstStep();
         } else {
           step = 0;
         }
