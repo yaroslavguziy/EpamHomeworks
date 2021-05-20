@@ -1,0 +1,32 @@
+.form {
+  display: none;
+  max-width: 500px;
+  margin: 100px auto 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-label {
+  padding: 5px 0;
+}
+.form-input {
+  display: block;
+  padding: 5px 10px;
+  max-width: 100%;
+  background-color: rgba(0, 128, 75, 0.452);
+  border: 0;
+}
+
+.form-buttons {
+  margin-top: 30px;
+}
+.form-button {
+  color: #fff;
+  background-color: rgba(0, 128, 0, 0.623);
+  border: 1px solid rgba(0, 128, 0, 0.623);
+  outline: none;
+  cursor: pointer;
+  padding: 10px 15px;
+}
