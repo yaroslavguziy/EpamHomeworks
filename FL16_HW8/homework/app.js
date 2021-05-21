@@ -6,7 +6,7 @@ function reverseelber(el) {
   let revEl = 0;
   if (number > 0) {
     while (number) {
-      revEl = revEl * 10 + (number % 10);
+      revEl = revEl * 10 + number % 10;
       number = Math.floor(number / 10);
     }
   }
