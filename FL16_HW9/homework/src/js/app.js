@@ -4,6 +4,8 @@ const inputTime = document.querySelector('#time');
 const inputPlace = document.querySelector('#place');
 const regExp = new RegExp(/^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$/);
 const converter = document.querySelector('#converter');
+const dollarCourse = 27.43;
+const evroCourse = 33.48;
 
 const meeting = prompt('Enter your meeting', 'meeting');
 
@@ -24,8 +26,6 @@ converter.addEventListener('click', () => {
 });
 
 function moneyConverter() {
-  const dollarCourse = 27.43;
-  const evroCourse = 33.48;
   const euro = +prompt('enter amount of euro', '');
   const dollars = +prompt('enter amount of dollars', '');
 
