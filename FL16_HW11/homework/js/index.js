@@ -1,5 +1,3 @@
-const content = window.document.querySelector('#content');
-
 function visitLink(path) {
   if (path) {
     const count = +window.localStorage.getItem(path);
@@ -14,6 +12,7 @@ const page2 = localStorage.getItem('Page2');
 const page3 = localStorage.getItem('Page3');
 
 function viewResults() {
+  const content = document.querySelector('#content');
   content.insertAdjacentHTML(
     'beforeEnd',
     `<ul>

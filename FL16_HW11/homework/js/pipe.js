@@ -1,17 +1,13 @@
-// function isFunction(functionToCheck) {
-// 	return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
-// }
-
 const pipe = (value, ...funcs) => {
-  // PIPE implementation
+  let position;
   try {
-    for (let func of funcs) {
-      value = func(value);
-    }
+    funcs.forEach((fn, index) => {
+      position = index;
+      value = fn(value);
+    });
   } catch (e) {
-    value = ' Provided argument at position 2 is not a function!';
+    value = ` Provided argument at position ${position} is not a function!`;
   }
-
   return value;
 };
 
