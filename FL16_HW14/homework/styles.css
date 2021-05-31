@@ -1,0 +1,69 @@
+/* START: Task 1 Styles */
+* {
+  box-sizing: border-box;
+}
+
+div {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+table {
+  margin: 0 auto;
+}
+
+td {
+  text-align: center;
+  padding: 40px 40px;
+  vertical-align: middle;
+  border: 1px solid #000;
+}
+
+tr {
+  border: 1px solid #000;
+}
+
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
+
+/* END: Task 1 Styles */
+
+/* START: Task 2 Styles */
+
+form {
+  width: 300px;
+}
+
+p {
+  padding: 20px 10px;
+}
+
+input {
+  width: 220px;
+  border: 1px solid black;
+  padding: 5px;
+}
+button {
+  padding: 4px 10px;
+  width: 75px;
+}
+.red,
+.green {
+  background-color: rgba(255, 0, 0, 0.555);
+  color: #fff;
+}
+.green {
+  background-color: green;
+}
+/* END: Task 2 Styles */
+
+/* START: Task 3 Styles */
+
+/* END: Task 3 Styles */

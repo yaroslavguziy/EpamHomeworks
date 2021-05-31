@@ -1,19 +1,5 @@
 const appRoot = document.getElementById('app-root');
 
-/*
-write your code here
-
-
-list of all regions
-externalService.getRegionsList();
-list of all languages
-externalService.getLanguagesList();
-get countries list by language
-externalService.getCountryListByLanguage()
-get countries list by region
-externalService.getCountryListByRegion()
-*/
-
 appRoot.insertAdjacentHTML('afterbegin', `<h1 class="app-title">Countries Search</h1>`);
 const form = document.createElement('form');
 form.classList.add('form');
@@ -52,14 +38,14 @@ appRoot.insertAdjacentHTML(
 <table class="table" id="table">
   <thead>
     <tr>
-      <th id="country">
-        Country name <span class="arrow ">&#129057;</span>
+      <th >
+        Country name <span class="arrow" id="country">&#129057;</span>
       </th>
       <th>Capital</th>
       <th>World region</th>
       <th class="languages">Languages</th>
-      <th id="area">
-        Area<span class="arrow ">&#129057;</span>
+      <th >
+        Area <span class="arrow" id="area">&#129057;</span>
       </th>
       <th>Flag</th>
     </tr>
@@ -67,78 +53,88 @@ appRoot.insertAdjacentHTML(
 </table>
 `
 );
+
 const message = document.getElementById('message');
 const regionInput = document.getElementById('region');
 const languageInput = document.getElementById('language');
 const radioInputs = document.querySelectorAll('.radio-input');
 const searchSelect = document.getElementById('select');
-const regionList = externalService.getRegionsList();
-const languagesList = externalService.getLanguagesList();
 const table = document.getElementById('table');
-const countryName = document.getElementById('table');
+const countryName = document.getElementById('country');
 const area = document.getElementById('area');
+const sortObj = { asc: [1, -1], desc: [-1, 1] };
+
 const MAP_RADIO_TO_FUNCTION = { region: 'getCountryListByRegion', language: 'getCountryListByLanguage' };
+const MAP_TO_LIST = { region: 'getRegionsList', language: 'getLanguagesList' };
 
-function addLanguagesList() {
-  return languagesList.forEach((language) => {
-    searchSelect.insertAdjacentHTML('beforeend', `<option value="${language}">${language}</option>`);
+function getSelectData() {
+  const radioValue = document.querySelector('input[name="radio"]:checked').value;
+  searchSelect.innerHTML = '<option>Select value</option>';
+
+  externalService[MAP_TO_LIST[radioValue]]().forEach((value) => {
+    searchSelect.insertAdjacentHTML('beforeend', `<option value="${value}">${value}</option>`);
   });
+
+  searchSelect.disabled = false;
+  message.classList.add('show');
+  table.classList.remove('table-show');
 }
 
-function addRegionList() {
-  return regionList.forEach((region) => {
-    searchSelect.insertAdjacentHTML('beforeend', `<option value="${region}">${region}</option>`);
-  });
-}
-let radioValue;
-
-radioInputs.forEach((input) => {
-  input.addEventListener('click', (e) => {
-    radioValue = e.currentTarget.value;
-    console.log(radioValue);
-    searchSelect.disabled = false;
-    addRegionList();
-    message.classList.add('show');
-  });
-});
-
-
-searchSelect.addEventListener('change', ({ target }) => {
-  console.log(typeof target.value);
-  message.classList.remove('show');
+function getTableData({ sortBy = 'name', sortDir = 'asc' }) {
   let dom = '';
-  externalService[MAP_RADIO_TO_FUNCTION['region']](target.value).forEach(
-    ({ name, flagURL, region, area, capital, languages }) => {
+  message.classList.remove('show');
+  const radioValue = document.querySelector('input[name="radio"]:checked').value;
+  const selectValue = searchSelect.value;
+  table.classList.add('table-show');
+
+  externalService[MAP_RADIO_TO_FUNCTION[radioValue]](selectValue)
+    .sort((a, b) => {
+      if (a[sortBy] > b[sortBy]) {
+        return sortObj[sortDir][0];
+      } else {
+        return sortObj[sortDir][1];
+      }
+    })
+    .forEach(({ name, flagURL, region, area, capital, languages }) => {
+      let languageList;
+
+      for (language in languages) {
+        languageList = languages[language];
+      }
+
       dom =
         dom +
         `<tr>
       <td>${name}</td>
       <td>${capital}</td>
       <td>${region}</td>
-      <td>${languages}</td>
+      <td>${languageList}</td>
       <td>${area}</td>
       <td><img src="${flagURL}"/></td>
     </tr>`;
-    }
-  );
+    });
+
+  const tBody = document.getElementsByTagName('tbody')[0];
+
+  if (tBody) {
+    tBody.remove();
+  }
   table.insertAdjacentHTML('beforeend', dom);
+}
+
+radioInputs.forEach((input) => {
+  input.addEventListener('change', getSelectData);
 });
 
-// radioInputs.addEventListener('click', (e) => {
-//   console.log(e.target);
-// });
+searchSelect.addEventListener('change', getTableData);
 
-// form.addEventListener('click', ({ target }) => console.log(target.value));
-// regionInput.addEventListener('click', ({ target }) => {
-//   console.log(target.value);
-//   searchSelect.disabled = false;
-//   addRegionList();
-//   message.classList.toggle('show');
-// });
+countryName.addEventListener('click', () => {
+  countryName.classList.toggle('arrow-transform');
+  getTableData({ sortBy: 'name', sortDir: countryName.classList.contains('arrow-transform') ? 'desc' : 'asc' });
+});
 
-// languageInput.addEventListener('click', ({ target }) => {
-//   console.log(target.value);
-//   searchSelect.disabled = false;
-//   addLanguagesList();
-//   message.classList.toggle('show');
-// });
+area.addEventListener('click', () => {
+  area.classList.toggle('arrow-transform');
+
+  getTableData({ sortBy: 'area', sortDir: area.classList.contains('arrow-transform') ? 'desc' : 'asc' });
+});
