@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-div {
+.center {
   margin-top: 100px;
   display: flex;
   justify-content: center;
@@ -66,4 +66,35 @@ button {
 
 /* START: Task 3 Styles */
 
+.court,
+.scores-board {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.court {
+  height: 330px;
+  margin: 100px auto 0;
+  background: url('./assets/court.png') no-repeat center;
+  background-size: contain;
+  position: relative;
+}
+
+.basketball {
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s linear;
+}
+
+.scores-board {
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.score-show {
+  text-align: center;
+  display: none;
+}
 /* END: Task 3 Styles */
