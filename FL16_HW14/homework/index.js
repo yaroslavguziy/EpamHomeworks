@@ -79,8 +79,6 @@ function getClickPosition(e) {
     ball.style.transform = translateValue;
     showMessageB();
     setTimeout(hideMessage, 3000);
-
-    ballBack();
   }
 }
 function ballBack() {
@@ -89,6 +87,7 @@ function ballBack() {
 
 function hideMessage() {
   scoreMessage.style.display = 'none';
+  ball.style.transform = `translate( ${0 + 'px'}, ${0 + 'px'} )`;
 }
 
 function showMessageA() {
