@@ -2,10 +2,10 @@ const root = document.getElementById('root');
 const addTweetEl = document.querySelector('.addTweet');
 const modifyItem = document.getElementById('modifyItem');
 const tweetItems = document.getElementById('tweetItems');
-const cancelModificationEl = document.getElementById('cancelModification'); //cancel button
-const saveModifiedItemEl = document.getElementById('saveModifiedItem'); // save button
-const modifyItemInputEl = document.getElementById('modifyItemInput'); // textarea
-const modifyItemHeader = document.getElementById('modifyItemHeader'); // header
+const cancelModificationEl = document.getElementById('cancelModification');
+const saveModifiedItemEl = document.getElementById('saveModifiedItem');
+const modifyItemInputEl = document.getElementById('modifyItemInput');
+const modifyItemHeader = document.getElementById('modifyItemHeader');
 const tweetsListEl = document.getElementById('list');
 const TWEETS = 'tweets';
 
@@ -26,7 +26,7 @@ function upsertTweets() {
   let tweets = Object.values(getTweets());
   let dom = '';
   tweets
-    .filter(({ like }) => (location.hash === '#/liked' ? like : true))
+    .filter(({ like }) => location.hash === '#/liked' ? like : true)
     .sort((a, b) => {
       if (a.date > b.date) {
         return -1;
@@ -107,10 +107,13 @@ function addTweet() {
   } else {
     const id = +location.hash.split('/')[2] || Object.keys(getTweets()).length;
     let tweets = getTweets();
-    setTweets({
-      ...tweets,
-      [id]: { id, name: modifyItemInputEl.value, like: tweets[id]?.like || false, date: new Date() },
-    });
+    const like = typeof tweets[id] === 'object' ? tweets[id].like : false;
+
+    setTweets(
+      Object.assign({}, tweets, {
+        [id]: { id, name: modifyItemInputEl.value, like, date: new Date() }
+      })
+    );
     location.hash = '';
     upsertTweets();
   }
