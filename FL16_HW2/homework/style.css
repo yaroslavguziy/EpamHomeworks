@@ -151,8 +151,8 @@ h3 {
     grid-template-rows: 150px 1fr max-content 150px;
     grid-template-areas:
       'header header header header'
-      'main main main  main'
       'sidebar sidebar sidebar sidebar'
+      'main main main  main'
       'footer footer footer footer';
   }
   .sidebar {
