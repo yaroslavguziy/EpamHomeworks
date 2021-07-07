@@ -1,0 +1,31 @@
+.messages {
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 15px;
+  height: 500px;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+
+form {
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  width: 100%;
+}
+
+input {
+  width: 80%;
+}
+
+.right {
+  text-align: right;
+  background-color: aqua;
+}
+
+.container {
+  margin-top: 5px;
+  padding: 5px;
+}
