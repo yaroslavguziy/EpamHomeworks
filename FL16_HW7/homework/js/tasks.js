@@ -42,9 +42,3 @@ function* generateIterableSequence(arr) {
     yield arr[i];
   }
 }
-
-const generatorObject = generateIterableSequence(['I', 'love', 'EPAM']);
-
-for (let value of generatorObject) {
-  console.log(value);
-}
