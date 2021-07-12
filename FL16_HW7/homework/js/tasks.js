@@ -31,11 +31,11 @@ const hideNumber = (number) => {
   return number.replace(/.(?=\d{4})/g, '*');
 };
 
-const required = () => {
-  throw new Error(`Paramater is required`);
+const required = (name) => {
+  throw new Error(`Paramater ${name} is required`);
 };
 
-const add = (a = required(), b = required()) => a + b;
+const add = (a = required('a'), b = required('b')) => a + b;
 
 function* generateIterableSequence(arr) {
   for (let i = 0; i < arr.length; i++) {
