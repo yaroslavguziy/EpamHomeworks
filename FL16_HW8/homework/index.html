@@ -2,35 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="wvalueth=device-wvalueth, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>jQuery</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="display">
-      <input class="value" id="value" type="text" readonly />
+    <div class="wrapper">
+      <div class="calculator">
+          <input class="display"  id="display" placeholder="0" type="text">
+          <div class="buttons-container">
+            <input class="clear" type="button" value="C"/>
+            <input class="calc"  type="button"value="."/>
+            <input class="calc" type="button" value="/"/>
+            <input class="calc" type="button" value="*"/>
+            <input class="calc" type="button" value="7"/>
+            <input class="calc" type="button" value="8"/>
+            <input class="calc" type="button" value="9"/>
+            <input class="calc" type="button" value="-"/>
+            <input class="calc" type="button" value="4"/>
+            <input class="calc" type="button" value="5"/>
+            <input class="calc" type="button" value="6"/>
+            <input class="calc" type="button" value="+"/>
+            <input class="calc" type="button" value="3"/>
+            <input class="calc" type="button" value="2"/>
+            <input class="calc" type="button" value="1"/>
+            <input class="result" type="button" value="="/>
+            <input class="calc " type="button" value="0"/>
+          </div>
+        </div>
+        <div id="logs" class="calculator-logs"></div>
+      </div>
+      
     </div>
-    <div class="buttons-container">
-      <div class="button number-0 function-clear">AC</div>
-      <div class="button function-delete">DEL</div>
-      <div class="button operator" id="content">/</div>
-      <div class="button" id="content">7</div>
-      <div class="button" id="content">8</div>
-      <div class="button" id="content">9</div>
-      <div class="button operator" id="content">*</div>
-      <div class="button" id="content">4</div>
-      <div class="button" id="content">5</div>
-      <div class="button" id="content">6</div>
-      <div class="button operator" id="content">-</div>
-      <div class="button" id="content">1</div>
-      <div class="button" id="content">2</div>
-      <div class="button" id="content">3</div>
-      <div class="button operator" id="content">+</div>
-      <div class="button number-0" id="content">0</div>
-      <div class="button" id="content">.</div>
-      <div class="button operator-equal">=</div>
-    </div>
+
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/index.js"></script>
   </body>

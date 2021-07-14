@@ -1,1 +1,79 @@
-/* Write your styles here */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.display {
+  margin-bottom: 20px;
+  padding-right: 10px;
+  text-align: right;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  max-width: 700px;
+  margin: 100px auto 0;
+}
+
+.calculator-logs,
+.calculator {
+  width: 50%;
+}
+.calculator {
+  padding: 20px;
+  background-color: blue;
+}
+.calculator-logs {
+  padding-left: 50px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.red {
+  background-color: red;
+}
+
+.log {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid red;
+}
+
+.circle:hover {
+  background-color: red;
+}
+
+.delete {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.delete:hover {
+  color: red;
+}
