@@ -2,6 +2,18 @@ $(document).ready(function () {
   $('.calc').click(function () {
     $('#display').val($('#display').val() + $(this).val());
   });
+
+  let symbol;
+
+  $('.operator').click(function () {
+    if (symbol) {
+      $('#display').val($('#display').val().replace(symbol, $(this).val()));
+    } else {
+      symbol = $(this).val();
+      $('#display').val($('#display').val() + $(this).val());
+    }
+  });
+
   $('.clear').click(function () {
     $('#display').attr('placeholder', '0').val('').css('color', 'black');
   });
@@ -9,7 +21,7 @@ $(document).ready(function () {
     const result = function (fn) {
       return new Function('return ' + fn)();
     };
-
+    symbol = '';
     const currentValue = $('#display').val();
 
     if (currentValue.includes('/0')) {
@@ -35,6 +47,7 @@ $(document).ready(function () {
     }
 
     const logs = $('.calculator-logs');
+    console.log(logs.scrollTop());
     if (logs.scroll()) {
       console.log(logs.scrollTop());
     }
