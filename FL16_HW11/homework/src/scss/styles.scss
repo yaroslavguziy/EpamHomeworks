@@ -1,0 +1,58 @@
+@import './vars.scss';
+@import './main.scss';
+
+body {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.tweet-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.tweet-text {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+
+ul {
+  margin: 50px auto 0;
+  width: 400px;
+}
+button {
+  border-radius: 5px;
+  outline: none;
+  color: inherit;
+  background-color: transparent;
+  border: 2px solid $secondary;
+  padding: 5px 10px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.liked-tweets {
+  margin-left: 10px;
+}
+
+.show-error {
+  width: 300px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+.liked {
+  background-color: #ccc;
+}
